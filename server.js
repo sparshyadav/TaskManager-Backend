@@ -7,6 +7,7 @@ const PORT=process.env.PORT || 50000;
 
 const authRoutes=require("./routes/authRoutes");
 const userRoutes=require("./routes/userRoutes");
+const taskRoutes=require("./routes/taskRoutes");
 
 const app=express();
 
@@ -24,7 +25,7 @@ connectDB();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-// app.use("/api/tasks", taskRoutes);
+app.use("/api/tasks", taskRoutes);
 // app.use("/api/reports", reportRoutes);
 
 app.listen(PORT, ()=>console.log(`Server Running on PORT: ${PORT}`));
